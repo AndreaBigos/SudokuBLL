@@ -14,6 +14,7 @@ public class LatinSquareTest {
 		assertFalse(lq.hasDuplicates(arr));
 	}
 	
+	@Test
 	public void hasDuplicates_test2() 
 	{	
 		int[] arr= {1,1,3,4,5};
@@ -21,6 +22,7 @@ public class LatinSquareTest {
 		assertTrue(lq.hasDuplicates(arr));
 	}
 	
+	@Test
 	public void hasDuplicates_test3() 
 	{	
 		int[] arr= {1,2,3,4,1};
@@ -28,6 +30,7 @@ public class LatinSquareTest {
 		assertTrue(lq.hasDuplicates(arr));
 	}
 	
+	@Test
 	public void hasDuplicates_test4() 
 	{	
 		int[] arr= null;
