@@ -59,7 +59,7 @@ public class LatinSquare {
 		return doesElementExist;
 	}
 	
-	public boolean ContainsZero()
+	public boolean containsZero()
 	{
 		for(int iCol = 0; iCol < LatinSquare.length; iCol++)
 		{
@@ -113,8 +113,6 @@ public class LatinSquare {
 	public boolean isLatinSquare()
 	{
 		boolean isLatinSquare = false;		
-		
-		
 		return isLatinSquare;
 	}
 	
