@@ -28,11 +28,16 @@ public class LatinSquare {
 	public boolean hasDuplicates(int[] arr)
 	{
 		boolean hasDuplicates=false;
-		Arrays.sort(arr);
 		if(arr==null)
 			return false;
+		Arrays.sort(arr);
+
+
+		
+		
 		for(int i =0; i<arr.length-1;i++)
 		{
+			
 			if(arr[i]==arr[i+1])
 			{
 				hasDuplicates= true;
@@ -88,34 +93,63 @@ public class LatinSquare {
 	public int[] getRow(int Row)
 	{
 		int[] intRow = new int[LatinSquare.length];
-		for(int iRow =0; iRow<LatinSquare[0].length; iRow++)
+		for(int iRow =0; iRow<LatinSquare.length; iRow++)
 		{
-			intRow[iRow] = LatinSquare[iRow][Row];
+			intRow[iRow] = LatinSquare[Row][iRow];
 		}
 		
 		return intRow;
 	}
 
-	public boolean hasAllValuesint(int[] arr1, int[] arr2)
-	{
-		boolean hasAllValues = false;
-		for(int i =0; i< arr1.length; i++)
+		public boolean hasAllValues(int[] arr1, int[] arr2)
 		{
-			for(int j=0; j<arr2.length; j++)
+			if(arr1==null||arr2==null)
+				return false;
+			boolean hasAllValues = false;
+			if(arr1.length==arr2.length)
 			{
-				if(arr1[i]==arr2[j])
-					hasAllValues= true;
+			for(int i =0; i< arr1.length; i++)
+			{
+				for(int j=0; j<arr2.length; j++)
+				{
+					if(arr1[i]==arr2[j])
+						hasAllValues= true;
+				}
 			}
+			}
+			return hasAllValues;
+		
+	}
+	
+		public boolean isLatinSquare()
+		{
+		
+			boolean isLatinSquare = true;
+			for(int i = 0; i< LatinSquare.length; i++)
+			{
+				for(int j =1; j < LatinSquare.length-1; j++)
+				{
+				if(!hasAllValues(getRow(i), getRow(j)))
+					return false;
+			}
+			}
+			for(int i = 0; i< LatinSquare.length; i++)
+			{
+				for(int j =1; j < LatinSquare.length-1; j++)
+				{
+				if(!hasAllValues(getColumn(i), getColumn(j)))
+					return false;
+			}
+			}
+			for (int i = 0; i < LatinSquare.length; i++) {
+				if(hasDuplicates(getRow(i)))
+					return false;
+			}
+			for (int j = 0; j < LatinSquare.length; j++) {
+				if(hasDuplicates(getColumn(j)))
+					return false;
+			}
+			return isLatinSquare;
+	
 		}
-		return hasAllValues;
-	}
-
-	public boolean isLatinSquare()
-	{
-		boolean isLatinSquare = false;		
-		return isLatinSquare;
-	}
-	
-	
-	
-}
+		}
