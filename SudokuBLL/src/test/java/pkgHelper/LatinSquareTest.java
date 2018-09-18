@@ -39,6 +39,35 @@ public class LatinSquareTest {
 	}
 	
 	@Test
+	public void getRow_Test1()
+	{
+		int[][] mySquare = {{1,2,3,4},{5,6,7,8},{9,3,2,4},{3,2,8,5}};
+		LatinSquare ls = new LatinSquare(mySquare);
+		
+		System.out.println(Arrays.toString(ls.getRow(2)));
+		
+	}
+	@Test
+	public void getRow_Test2()
+	{
+		int[][] mySquare = {{4,5,2,3},{1,3,5,6},{8,7,6,5},{4,3,2,1}};
+		LatinSquare ls = new LatinSquare(mySquare);
+		
+		System.out.println(Arrays.toString(ls.getRow(0)));
+		
+	}
+	
+	@Test
+	public void getRow_Test3()
+	{
+		int[][] mySquare = {{6,3,2,4},{2,4,5,6},{6,5,7,3},{2,1,4,3}};
+		LatinSquare ls = new LatinSquare(mySquare);
+		
+		System.out.println(Arrays.toString(ls.getRow(3)));
+		
+	}
+	
+	@Test
 	public void doesElementExist_Test1()
 	{
 		int[] arr = {1,2,3,4,5};
