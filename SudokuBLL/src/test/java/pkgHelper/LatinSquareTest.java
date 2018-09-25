@@ -6,224 +6,286 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
+import pkgGame.Sudoku;
+
 public class LatinSquareTest {
 
-	@Test
-	public void hasDuplicates_test1() 
-	{	
-		int[] arr= {1,2,3,4,5};
-		LatinSquare lq = new LatinSquare();
-		assertFalse(lq.hasDuplicates(arr));
-	}
+//	@Test
+//	public void hasDuplicates_test1() {
+//
+//		LatinSquare LS = new LatinSquare();
+//		int[] arr = { 1, 3, 5, 2, 4 };
+//
+//		boolean bHasDuplicates = LS.hasDuplicates(arr);
+//
+//		assertEquals(bHasDuplicates, false);
+//
+//	}
+//
+//	@Test
+//	public void hasDuplicates_test2() {
+//
+//		LatinSquare LS = new LatinSquare();
+//		int[] arr = { 1, 3, 5, 2, 3 };
+//
+//		boolean bHasDuplicates = LS.hasDuplicates(arr);
+//
+//		assertEquals(bHasDuplicates, true);
+//
+//	}
+//
+//	@Test
+//	public void doesElementExist_Test1() {
+//		LatinSquare LS = new LatinSquare();
+//		int[] arr = { 1, 3, 5, 2, 4 };
+//		int iValue = 3;
+//		boolean bdoesElementExist = LS.doesElementExist(arr, iValue);
+//
+//		assertEquals(bdoesElementExist, true);
+//	}
+//
+//	@Test
+//	public void doesElementExist_Test2() {
+//		LatinSquare LS = new LatinSquare();
+//		int[] arr = { 1, 3, 5, 2, 4 };
+//		int iValue = 99;
+//		boolean bdoesElementExist = LS.doesElementExist(arr, iValue);
+//
+//		assertEquals(bdoesElementExist, false);
+//	}
+//
+//	@Test
+//	public void hasAllValues_Test1() {
+//		LatinSquare LS = new LatinSquare();
+//		int[] arr1 = { 1, 2, 3 };
+//		int[] arr2 = { 3, 2, 1 };
+//
+//		boolean bhasAllValues = LS.hasAllValues(arr1, arr2);
+//
+//		assertEquals(bhasAllValues, true);
+//
+//	}
+//
+//	@Test
+//	public void hasAllValues_Test2() {
+//		LatinSquare LS = new LatinSquare();
+//		int[] arr1 = { 1, 2, 3 };
+//		int[] arr2 = { 3, 2, 99 };
+//
+//		boolean bhasAllValues = LS.hasAllValues(arr1, arr2);
+//
+//		assertEquals(bhasAllValues, false);
+//
+//	}
+//
+//	@Test
+//	public void getColumn_Test1() {
+//		
+//		int[][] MySquare = { { 1, 2, 3 }, { 3, 1, 2 }, { 2, 3, 1 } };
+//
+//		LatinSquare LS = new LatinSquare(MySquare);
+//		int [] ExpectedCol = {2,1,3};
+//		int [] Col = LS.getColumn(1);
+//		
+//		assertTrue(Arrays.equals(ExpectedCol, Col));
+//		System.out.println(Arrays.toString(Col));
+//	}
+//	
+//	@Test
+//	public void getRow_Test1() {
+//		
+//		int[][] MySquare = { { 1, 2, 3 }, { 3, 1, 2 }, { 2, 3, 1 } };
+//
+//		LatinSquare LS = new LatinSquare(MySquare);
+//		int [] ExpectedRow = {3,1,2};
+//		int [] Row = LS.getRow(1);
+//		
+//		assertTrue(Arrays.equals(ExpectedRow, Row));
+//		System.out.println(Arrays.toString(Row));
+//	}
+//	
+//	@Test
+//	public void isLatinSquare_Test1() {
+//		
+//		int[][] MySquare = { { 1, 2, 3 }, { 3, 1, 2 }, { 2, 3, 1 } };
+//
+//		LatinSquare LS = new LatinSquare(MySquare);
+//		
+//		assertTrue(LS.isLatinSquare());
+//	}
+//	
+//	@Test
+//	public void isLatinSquare_Test2() {
+//		
+//		int[][] MySquare = { { 1, 2, 3 }, { 3, 1, 2 }, { 4, 5, 6 } };
+//
+//		LatinSquare LS = new LatinSquare(MySquare);
+//		
+//		assertFalse(LS.isLatinSquare());
+//	}
+	
+//	@Test
+//	public void isPartialSoduko_test1()
+//	{
+//		int[][] mySquare = {{0,1,2,3},{2,3,1,0},{1,0,3,2},{3,2,0,1}};
+//		Sudoku ls = new Sudoku(mySquare);
+//		assertTrue(ls.isPartialSudoku());
+//	}
+//	
+//	@Test
+//	public void isPartialSoduko_test2()
+//	{
+//		int[][] mySquare = {{0,2,3,4},{1,0,3,4},{1,2,0,4},{1,2,3,0}};
+//		Sudoku ls = new Sudoku(mySquare);
+//		assertTrue(ls.isPartialSudoku());
+//	}
+//	
+//	@Test
+//	public void isPartialSoduko_test3()
+//	{
+//		int[][] mySquare = {{1,1,1,1},{1,1,1,1},{1,1,1,1},{1,1,1,1}};
+//		Sudoku ls = new Sudoku(mySquare);
+//		assertFalse(ls.isPartialSudoku());
+//	}
 	
 	@Test
-	public void hasDuplicates_test2() 
-	{	
-		int[] arr= {1,1,3,4,5};
-		LatinSquare lq = new LatinSquare();
-		assertTrue(lq.hasDuplicates(arr));
-	}
-	
-	@Test
-	public void hasDuplicates_test3() 
-	{	
-		int[] arr= {1,2,3,4,1};
-		LatinSquare lq = new LatinSquare();
-		assertTrue(lq.hasDuplicates(arr));
-	}
-	
-	@Test
-	public void hasDuplicates_test4() 
-	{	
-		int[] arr= null;
-		LatinSquare lq = new LatinSquare();
-		assertFalse(lq.hasDuplicates(arr));
-	}
-	
-	@Test
-	public void doesElementExist_Test1()
+	public void isSudoku_test1()
 	{
-		int[] arr = {1,2,3,4,5};
-		int iValue=3;
-		LatinSquare lq = new LatinSquare();
-		assertTrue(lq.doesElementExist(arr, iValue));
+		int[][] mySquare = {{1,2,3},{3,1,2},{2,3,1}};
+		Sudoku ls = new Sudoku(mySquare);
+		assertTrue(ls.isSudoku());
 	}
 	
 	@Test
-	public void doesElementExist_Test2()
+	public void isSudoku_test2()
 	{
-		int[] arr = {1,2,3,4,5};
-		int iValue=99;
-		LatinSquare lq = new LatinSquare();
-		assertFalse(lq.doesElementExist(arr, iValue));
+		int[][] mySquare = {{1,2,1},{1,1,2},{1,3,1}};
+		Sudoku ls = new Sudoku(mySquare);
+		assertFalse(ls.isSudoku());
 	}
 	
 	@Test
-	public void doesElementExist_Test3()
+	public void isSudoku_test3()
 	{
-		int[] arr = null;
-		int iValue=1;
-		LatinSquare lq = new LatinSquare();
-		assertFalse(lq.doesElementExist(arr, iValue));
+		int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,1,4,3},{3,4,1,2}};
+		Sudoku ls = new Sudoku(mySquare);
+		assertTrue(ls.isSudoku());
 	}
 	
 	@Test
-	public void hasAllValues_Test1()
+	public void isPartialSudoku_test1()
 	{
-		int[] arr1 = {1,2,3};
-		int[] arr2= {4,5,6};
-
-		LatinSquare lq = new LatinSquare();
-		assertFalse(lq.hasAllValues(arr1, arr2));
+		int[][] mySquare = {{0,2,3,4},{4,0,2,1},{2,1,0,3},{3,4,1,0}};
+		Sudoku ls = new Sudoku(mySquare);
+		assertTrue(ls.isSudoku());
 	}
 	
 	@Test
-	public void hasAllValues_Test2()
+	public void isPartialSudoku_test2()
 	{
-		int[] arr1 = {1,2,3};
-		int[] arr2= {1,2,3};
-
-		LatinSquare lq = new LatinSquare();
-		assertTrue(lq.hasAllValues(arr1, arr2));
+		int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,1,4,3},{3,4,1,2}};
+		Sudoku ls = new Sudoku(mySquare);
+		assertFalse(ls.isSudoku());
 	}
 	
 	@Test
-	public void hasAllValues_Test3()
+	public void isPartialSudoku_test3()
 	{
-		int[] arr1 = null;
-		int[] arr2= {1,2,3};
-
-		LatinSquare lq = new LatinSquare();
-		assertFalse(lq.hasAllValues(arr1, arr2));
+		int[][] mySquare = {{1,2,3,0},{0,3,2,1},{2,0,1,3},{3,1,0,2}};
+		Sudoku ls = new Sudoku(mySquare);
+		assertTrue(ls.isSudoku());
 	}
 	
-	@Test
-	public void hasAllValues_Test4()
+	@Test 
+	public void isValueValid_test1()
 	{
-		int[] arr1 = {1,2,3};
-		int[] arr2= null;
-
-		LatinSquare lq = new LatinSquare();
-		assertFalse(lq.hasAllValues(arr1, arr2));
+		int[][] mySquare = {{1,0,2,3},{0,1,4,2},{2,3,1,0},{4,2,0,1}};
+		Sudoku ls = new Sudoku(mySquare);
+		int iCol =1;
+		int iRow =0;
+		int iValue = 4;
+		assertTrue(ls.isValueValid(iValue, iCol, iRow));
 	}
 	
-	@Test
-	public void hasAllValues_Test5()
+	@Test 
+	public void isValueValid_test2()
 	{
-		int[] arr1 = {1,2,3,4,5};
-		int[] arr2= {1,2,3};
-
-		LatinSquare lq = new LatinSquare();
-		assertFalse(lq.hasAllValues(arr1, arr2));
+		int[][] mySquare = {{1,0,2,3},{0,1,4,2},{2,3,1,0},{4,2,0,3}};
+		Sudoku ls = new Sudoku(mySquare);
+		int iCol =0;
+		int iRow =1;
+		int iValue = 3;
+		assertTrue(ls.isValueValid(iValue, iCol, iRow));
+	}
+	
+	@Test 
+	public void isValueValid_test3()
+	{
+		int[][] mySquare = {{1,0,2,3},{0,1,4,2},{2,3,1,0},{4,2,0,3}};
+		Sudoku ls = new Sudoku(mySquare);
+		int iCol =3;
+		int iRow =2;
+		int iValue = 4;
+		assertFalse(ls.isValueValid(iValue, iCol, iRow));
+	}
+	
+	@Test 
+	public void isValueValid_test4()
+	{
+		int[][] mySquare = {{1,0,2,3},{0,1,4,2},{2,3,1,0},{4,2,0,3}};
+		Sudoku ls = new Sudoku(mySquare);
+		int iCol =2;
+		int iRow =3;
+		int iValue = 2;
+		assertFalse(ls.isValueValid(iValue, iCol, iRow));
 	}
 	
 	@Test
-	public void getColumn_Test1() {
-	
-	int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,3,4,1},{3,4,1,2}};
-	LatinSquare ls = new LatinSquare(mySquare);
-	
-	System.out.println(Arrays.toString(ls.getColumn(2)));
-	}
-	
-	@Test
-	public void getColumn_Test2() {
-
-	int[][] mySquare = {{2,6,4},{3,2,1},{9,3,7},{7,8,9}};
-	LatinSquare ls = new LatinSquare(mySquare);
-
-	System.out.println(Arrays.toString(ls.getColumn(0)));
-	}
-	
-	@Test
-	public void getColumn_Test3() {
-	
-	int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,3,4,1},{3,4,1,2}};
-	LatinSquare ls = new LatinSquare(mySquare);
-	
-	System.out.println(Arrays.toString(ls.getColumn(3)));
-	}
-	
-	@Test
-	public void containsZero_Test1() {
-		int[][] mySquare = {{1,2,3},{3,2,1},{2,3,1}};
+	public void getRegion_test1()
+	{
+		int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,1,4,3},{3,4,1,2}};
+		Sudoku ls=new Sudoku(mySquare);
+		System.out.println(ls.getRegion(0));
 		
-		LatinSquare ls = new LatinSquare(mySquare);
+	}
+	
+	@Test
+	public void getRegion_test2()
+	{
+		int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,1,4,3},{3,4,1,2}};
+		Sudoku ls=new Sudoku(mySquare);
+		System.out.println(ls.getRegion(1));
 		
-		assertFalse(ls.containsZero());
 	}
-	
 	@Test
-	public void containsZero_Test2() {
-		int[][] mySquare = {{1,2,3},{3,0,1},{2,3,1}};
-		
-		LatinSquare ls = new LatinSquare(mySquare);
-		assertTrue(ls.containsZero());
-	}
-	
-	@Test
-	public void containsZero_Test3() {
-		int[][] mySquare = {{0,0,0},{0,0,0},{0,0,0}};
-		
-		LatinSquare ls = new LatinSquare(mySquare);
-		assertTrue(ls.containsZero());
-	}
-	
-	@Test
-	public void isLatinSquare_Test1()
+	public void getRegion_test3()
 	{
-		int[][] mySquare = {{6,3,2,4},{2,4,5,6},{6,5,7,3},{2,1,4,3}};
-		LatinSquare ls = new LatinSquare(mySquare);
-		assertFalse(ls.isLatinSquare());
+		int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,1,4,3},{3,4,1,2}};
+		Sudoku ls=new Sudoku(mySquare);
+		System.out.println(ls.getRegion(2));		
 	}
 	
 	@Test
-	public void isLatinSquare_Test2()
+	public void getRegion_test4()
 	{
-		int[][] mySquare = {{1,2,3,4},{2,3,4,1},{3,4,1,2},{4,1,2,3}};
-		LatinSquare ls = new LatinSquare(mySquare);
-		assertTrue(ls.isLatinSquare());
+		int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,1,4,3},{3,4,1,2}};
+		Sudoku ls=new Sudoku(mySquare);
+		System.out.println(ls.getRegion(1,2));		
 	}
 	
 	@Test
-	public void isLatinSquare_Test3()
+	public void getRegion_test5()
 	{
-		int[][] mySquare = {{1,2,3,4},{1,2,3,4},{1,2,3,4},{1,2,3,4}};
-		LatinSquare ls = new LatinSquare(mySquare);
-		assertFalse(ls.isLatinSquare());
+		int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,1,4,3},{3,4,1,2}};
+		Sudoku ls=new Sudoku(mySquare);
+		System.out.println(ls.getRegion(0,1));		
 	}
 	
 	@Test
-	public void isLatinSquare_Test4()
+	public void getRegion_test6()
 	{
-		int[][] mySquare = {{1,2,3,4},{5,6,7,8},{9,1,2,3},{4,5,6,7}};
-		LatinSquare ls = new LatinSquare(mySquare);
-		assertFalse(ls.isLatinSquare());
-	}
-	@Test
-	public void getRow_test1()
-	{
-		int[][] mySquare = {{1,2,3,4},{5,6,7,8},{9,3,2,4},{4,3,2,1}};
-		LatinSquare ls = new LatinSquare(mySquare);
-		
-		System.out.println(Arrays.toString(ls.getRow(0)));
-	}
-	
-	@Test
-	public void getRow_test2()
-	{
-		int[][] mySquare = {{4,5,2,3},{1,3,5,6},{8,7,6,5},{3,2,8,5}};
-		LatinSquare ls = new LatinSquare(mySquare);
-		
-		System.out.println(Arrays.toString(ls.getRow(0)));
-	}
-	
-	@Test
-	public void getRow_test3()
-	{
-		int[][] mySquare = {{6,3,2,4},{2,4,5,6},{6,5,7,3},{2,1,4,3}};
-		LatinSquare ls = new LatinSquare(mySquare);
-		
-		System.out.println(Arrays.toString(ls.getRow(3)));
+		int[][] mySquare = {{1,2,3,4},{4,3,2,1},{2,1,4,3},{3,4,1,2}};
+		Sudoku ls=new Sudoku(mySquare);
+		System.out.println(ls.getRegion(3,0));		
 	}
 }
